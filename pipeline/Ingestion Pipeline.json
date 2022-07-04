@@ -1,5 +1,5 @@
 {
-	"name": "Sample pipeline",
+	"name": "Ingestion Pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -24,10 +24,15 @@
 						}
 					},
 					"sink": {
-						"type": "AzurePostgreSQLSink",
-						"writeBatchSize": 1000000,
-						"writeBatchTimeout": "00:30:00",
-						"writeMethod": "CopyCommand"
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
@@ -47,7 +52,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzurePostgreSqlTable1",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
