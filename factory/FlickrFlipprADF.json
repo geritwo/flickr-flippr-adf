@@ -1,0 +1,9 @@
+{
+	"name": "FlickrFlipprADF",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "99ffbbda-676a-4409-bd4c-86d6897ccb80",
+		"tenantId": "df6e115f-a988-4a85-bd14-bb748db09b5e"
+	}
+}
